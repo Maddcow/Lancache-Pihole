@@ -2,7 +2,7 @@
 
 ### Set variables, change as necessary ###
 # Username of the regular user you're using
-SYSTEMUSER=oct8l
+SYSTEMUSER=$(logname)
 # Directory the git repository is synced to
 GITSYNCDIR=/home/$SYSTEMUSER/cache-domains
 # Your personalized config file from "Setting up our config.json file" step
