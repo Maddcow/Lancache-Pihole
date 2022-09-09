@@ -8,5 +8,4 @@ Command to use this -
   chmod +x lancache-pihole.sh
   ./lancache-pihole.sh
 
-
 Scripting LanCache DNS updates with Pi-hole (https://oct8l.gitlab.io/posts/2021/297/scripting-lancache-dns-updates-with-pi-hole/)
