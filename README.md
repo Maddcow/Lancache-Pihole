@@ -10,7 +10,7 @@ Straight to the point - I made a script of the following guide ([link](https://o
 
 ## Lancache-pihole.sh
 Performs the following actions:
-1. Verifies if root access and if pihole is installed
+1. Verifies if root access and if pihole is installed (via pihole-FTL service or a docker named "pihole")
 2. Git clones the cache-domains repo
 3. Creates a config.json file with the computers ip address.
 4. Copies the lancache-dns-updates.sh to /root
@@ -22,7 +22,7 @@ Performs the following actions:
 1. Copies cache-domains folder to a /tmp folder
 2. Executes create-dnsmasq.sh from the /tmp folser - this is used to update cache-domains
 3. Copies the newly created .conf files to /etc/dnsmasq.d/
-4. Restarts the pihole-FTL service
+4. Restarts the pihole-FTL service or pihole docker
 5. Deletes the /tmp folder
 
 ## Acknowledgments
