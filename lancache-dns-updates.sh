@@ -38,8 +38,12 @@ cd $TEMPDIR/scripts/ && \
 # Copy the dnsmasq files
 cp -r $TEMPDIR/scripts/output/dnsmasq/*.conf /etc/dnsmasq.d/
 
-# Restart pihole-FTL
-sudo service pihole-FTL restart
+# Restart pihole-FTL or docker
+if systemctl is-active --quiet pihole-FTL ; then
+  sudo service pihole-FTL restart
+elif sudo docker ps -a | grep -o "pihole" > /dev/null 2>&1 ; then
+  sudo docker restart pihole > /dev/null 2>&1
+fi
 
 # Delete the temp directory to clean up files
 trap "exit 1"           HUP INT PIPE QUIT TERM
