@@ -8,7 +8,7 @@ if [ "$(id -un)" != "root" ]; then
     exit
 fi
 
-if ! systemctl is-active --quiet pihole-FTL; then
+if !( systemctl is-active --quiet pihole-FTL || sudo docker ps -a | grep -o "pihole" > /dev/null 2>&1 ); then
   echo " "
   echo " Pihole is currently not installed on this system."
   echo " Install Pihole (https://pi-hole.net/) before running this script."
